@@ -72,19 +72,12 @@ input {
 }
 
 .chatbox {
-  .chat-log {
-    
-  }
+
 
   .chat-msg {
-
-  }
-  
-  .chat-msg{
     padding: 12px;
     align-items: center;
     background-color: rgb(255, 255, 255, 0.1);
-
   }
 
   .chat-msg-center {
@@ -96,7 +89,6 @@ input {
     padding-left: 24px;
     padding-right: 24px;
     align-items: center;
-
   }
 
   .avatar {
@@ -104,6 +96,13 @@ input {
     border-radius: 50%;
     min-width: 40px;
     min-height: 40px;
+  }
+  .avatar.chatgpt {
+    background-color: white;
+    border-radius: 50%;
+    min-width: 40px;
+    min-height: 40px;
+    background-color: #11a37f;
   }
   .msg {
     padding-left: 40px;
