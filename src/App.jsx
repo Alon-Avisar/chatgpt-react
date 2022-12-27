@@ -1,11 +1,26 @@
 import "./App.scss";
+import { ChatMsg } from "./cmp/chat-msg";
 import AddIcon from "@mui/icons-material/Add";
 import SvgComponent from "./cmp/chatgpt-svg";
+import { useState } from "react";
 
 function App() {
-  async function handleSubmit(ev) {
-    ev.preventDefault();
-    console.log("submit");
+  const [input, setInput] = useState("");
+  const [chatLog, setChatLog] = useState([
+    {
+      user: "gpt",
+      message: "How can i help?",
+    },
+    {
+      user: "f",
+      message: "safelp?",
+    },
+  ]);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setChatLog([...chatLog, { user: "me", message: `${input}` }]);
+    setInput("");
   }
 
   return (
@@ -18,29 +33,26 @@ function App() {
       </aside>
       <section className="chatbox">
         <div className="chat-log">
-          <div className="chat-msg">
-            <div className="chat-msg-center">
-              <div className="avatar"></div>
-              <div className="msg">Hw</div>
-            </div>
-          </div>
+          {chatLog.map((message, idx) => {
+            return <ChatMsg key={idx} message={message}/>;
+          })}
         </div>
         <div className="chat-log">
           <div className="chat-msg chatgpt">
             <div className="chat-msg-center">
               <div className="avatar chatgpt">
-                {" "}
                 <SvgComponent />
               </div>
-
-              <div className="msg">I am an AI</div>
             </div>
           </div>
         </div>
 
         <div className="chat-input-holder">
           <form onSubmit={handleSubmit}>
-            <input className="text-input-area"></input>
+            <input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              className="text-input-area"></input>
           </form>
         </div>
       </section>
