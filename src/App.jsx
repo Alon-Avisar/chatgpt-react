@@ -12,21 +12,39 @@ function App() {
       message: "How can i help?",
     },
     {
-      user: "f",
-      message: "safelp?",
+      user: "user",
+      message: "How can i help?",
     },
+  ,
   ]);
+
+  function clearChat() {
+    setChatLog([]);
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setChatLog([...chatLog, { user: "me", message: `${input}` }]);
-    setInput("");
+    let chatLogNew = [...chatLog, { user: "me", message: `${input}` }]
+    //  setChatLog([...chatLog, { user: "me", message: `${input}` }]);
+     setInput("");
+    const messages = chatLogNew.map((message) => message.message).join("")
+    const response = await fetch("http://localhost:3080", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        message: messages,
+      }),
+    });
+    const data = await response.json();
+    // setChatLog([...chatLogNew, { user: "gpt", message: `${input}` }]);
+    setChatLog([...chatLogNew, { user: "gpt", message: data.message }]);
+    console.log("data:", data.message);
   }
 
   return (
     <div className="App">
       <aside className="sidemenu">
-        <div className="side-menu-btn">
+        <div className="side-menu-btn" onClick={clearChat}>
           <AddIcon />
           <span> New Chat </span>
         </div>
@@ -34,7 +52,7 @@ function App() {
       <section className="chatbox">
         <div className="chat-log">
           {chatLog.map((message, idx) => {
-            return <ChatMsg key={idx} message={message}/>;
+            return <ChatMsg key={idx} message={message} />;
           })}
         </div>
         <div className="chat-log">
