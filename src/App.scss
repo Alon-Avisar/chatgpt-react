@@ -21,6 +21,8 @@
 }
 
 .chatbox {
+  height:100%; /* Set the height of the scrollable area */
+  overflow-y: scroll;
   flex: 1;
   background-color: #343341;
   position: relative;
@@ -49,7 +51,8 @@
 
 .chat-input-holder {
   padding: 24px;
-  position: absolute;
+  background-color: #343641;
+  position: sticky;
   bottom: 0;
   right: 0;
   left: 0;

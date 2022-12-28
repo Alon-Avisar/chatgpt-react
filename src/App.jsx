@@ -1,44 +1,41 @@
 import "./App.scss";
 import { ChatMsg } from "./cmp/chat-msg";
 import AddIcon from "@mui/icons-material/Add";
-import SvgComponent from "./cmp/chatgpt-svg";
 import { useState } from "react";
 
 function App() {
   const [input, setInput] = useState("");
   const [chatLog, setChatLog] = useState([
-    {
-      user: "gpt",
-      message: "How can i help?",
-    },
-    {
-      user: "user",
-      message: "How can i help?",
-    },
-  ,
+
+
   ]);
 
   function clearChat() {
     setChatLog([]);
   }
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    let chatLogNew = [...chatLog, { user: "me", message: `${input}` }]
-    //  setChatLog([...chatLog, { user: "me", message: `${input}` }]);
-     setInput("");
-    const messages = chatLogNew.map((message) => message.message).join("")
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const newMessage = { user: "me", message: input };
+
+    console.log('newMessage:' , newMessage)
+    console.log('input:' , input)
+    
+    const chatLogNew = [...chatLog, newMessage];
+    console.log('chatLogNew:' , chatLogNew)
+    setInput("");
+    setChatLog(chatLogNew)
+    const messages = chatLogNew.map(({ message }) => message).join("");
     const response = await fetch("http://localhost:3080", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        message: messages,
-      }),
+      body: JSON.stringify({ message: messages }),
     });
     const data = await response.json();
-    // setChatLog([...chatLogNew, { user: "gpt", message: `${input}` }]);
-    setChatLog([...chatLogNew, { user: "gpt", message: data.message }]);
-    console.log("data:", data.message);
+    const gptMessage = { user: "gpt", message: data.message };
+
+    setChatLog([...chatLogNew, gptMessage]);
+    
   }
 
   return (
@@ -46,31 +43,27 @@ function App() {
       <aside className="sidemenu">
         <div className="side-menu-btn" onClick={clearChat}>
           <AddIcon />
-          <span> New Chat </span>
+          <span>New Chat</span>
         </div>
       </aside>
       <section className="chatbox">
         <div className="chat-log">
-          {chatLog.map((message, idx) => {
-            return <ChatMsg key={idx} message={message} />;
-          })}
+          {chatLog.map((message, index) => (
+            <ChatMsg key={index} message={message} />
+          ))}
         </div>
         <div className="chat-log">
           <div className="chat-msg chatgpt">
-            <div className="chat-msg-center">
-              <div className="avatar chatgpt">
-                <SvgComponent />
-              </div>
-            </div>
+            <div className="chat-msg-center" />
           </div>
         </div>
-
         <div className="chat-input-holder">
           <form onSubmit={handleSubmit}>
             <input
               value={input}
-              onChange={(e) => setInput(e.target.value)}
-              className="text-input-area"></input>
+              onChange={(event) => setInput(event.target.value)}
+              className="text-input-area"
+            />
           </form>
         </div>
       </section>
