@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ChatMsg } from "./chat-msg";
 import AddIcon from "@mui/icons-material/Add";
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import { SpeechToText } from "./speach-to-text";
 
 
 export const MainChat = () => {
@@ -90,6 +92,7 @@ export const MainChat = () => {
           </div>
           <div className="chat-input-holder">
             <form onSubmit={handleSubmit}>
+              <button className="my-button"> <NavigateNextIcon/></button>
               <input
               placeholder="Hi human, ask me everything!"
                 value={input}
@@ -97,6 +100,7 @@ export const MainChat = () => {
                 className="text-input-area"
               />
             </form>
+            <SpeechToText/>
           </div>
         </section>
       </div>

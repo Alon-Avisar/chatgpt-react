@@ -13,4 +13,3 @@ export const ChatMsg = ({ message }) => {
       </div>
   );
 };
-//  ? message.message : 'Please write '

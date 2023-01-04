@@ -1,0 +1,28 @@
+.video-intro{
+    margin-top: 160px;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+
+   .text-input-area{
+    width: 20%;
+  }
+    .video-intro video {
+      width: 300px;
+    }
+    .chatbox{
+      width: 350px;
+      form{
+        width: 95%;
+      }
+      .my-button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: -10px;
+      }
+    }
+  }
+  

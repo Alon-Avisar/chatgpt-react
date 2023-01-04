@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+
 html{
   background-color: #000000;
 }
@@ -115,16 +116,35 @@ html{
 }
 
 input {
-  padding-left: 15px;
+  position: relative;
+  width: 100px;
+  height: 30px;
 }
 
+.my-button {
+  color: white;
+  border: none;
+  background: none;
+  display: flex;
+  position: absolute;
+  z-index: 10;
+  top: 36px;
+  right: 35px;
+  width: 33px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-button:hover{
+  cursor: pointer;
+}
 .chatbox {
 
 
   .chat-msg {
     padding: 12px;
     align-items: center;
-    // background-color: rgb(255, 255, 255, 0.1);
   }
 
   .chat-msg-center {
