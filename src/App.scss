@@ -2,17 +2,57 @@
   box-sizing: border-box;
 }
 
-.App {
-  text-align: center;
-  display: flex;
-  background-color: #282c34;
-  color: white;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+html{
+  background-color: #000000;
 }
+
+::-webkit-scrollbar {
+  width: 7px;
+  background-color:hsl(244, 12%, 23%);
+  z-index: -11;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #8e898970;
+  border-radius: 10px;
+}
+.App-contianer {
+  background-color: #000000;
+  color: white;
+
+
+
+.app-header {
+  width: 100%;
+  background-color: #000000;
+
+
+  img{
+    height: 80px;
+  }
+  .sub-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+     nav{
+      margin-right: 30px;
+
+     }
+    nav>*:not(:last-child){
+        margin-inline-end: 15px;
+        
+    }
+
+    h1{
+      margin-left: 20px;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+}
+
 
 .sidemenu {
   width: 240px;
@@ -20,16 +60,18 @@
   background-color: #202123;
 }
 
+.models{
+  text-align: center;
+}
+
 .chatbox {
-  height:100%; /* Set the height of the scrollable area */
-  overflow-y: scroll;
-  flex: 1;
+  max-height: 300px;
+  height: 300px;
+  z-index: 100;  overflow-y: scroll;
   background-color: #343341;
-  position: relative;
 }
 
 .side-menu-btn {
-  display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 15px;
@@ -45,12 +87,13 @@
 }
 
 .side-menu-btn:hover {
-  background-color: rgb(255, 255, 255, 0.1);
+  background-color: rgb(255, 255, 255, 0.2);
   cursor: pointer;
 }
 
 .chat-input-holder {
-  padding: 24px;
+  margin-top: 142px;
+  padding: 21px;
   background-color: #343641;
   position: sticky;
   bottom: 0;
@@ -59,8 +102,9 @@
 }
 
 .text-input-area {
+  margin-top: 4px;
   background-color: #40414f;
-  width: 90%;
+  width: 100%;
   border-radius: 5px;
   font-size: 1.25em;
   border: none;
@@ -80,7 +124,7 @@ input {
   .chat-msg {
     padding: 12px;
     align-items: center;
-    background-color: rgb(255, 255, 255, 0.1);
+    // background-color: rgb(255, 255, 255, 0.1);
   }
 
   .chat-msg-center {
@@ -108,4 +152,5 @@ input {
     padding-left: 40px;
     padding-right: 40px;
   }
+}
 }
