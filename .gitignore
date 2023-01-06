@@ -8,7 +8,7 @@
 # testing
 /coverage
 # cmp
-cmp/*
+cmp/text.jsx
 
 # production
 /build
