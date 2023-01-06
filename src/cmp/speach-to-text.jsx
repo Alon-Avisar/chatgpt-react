@@ -1,32 +1,40 @@
 import React, { useState, useEffect } from 'react';
+import { MainChat } from './main-chat';
+import { VoiceBtn } from './voice-btn';
 
-export const  SpeechToText = () => {
+export const SpeechToText = () => {
   const [transcription, setTranscription] = useState('');
   const [isRecording, setIsRecording] = useState(false);
   const [recognition, setRecognition] = useState(null);
 
   useEffect(() => {
-    if ('SpeechRecognition' in window) {
-      recognition = new window.SpeechRecognition();
+    if ('webkitSpeechRecognition' in window) {
+      const recognition = new window.webkitSpeechRecognition();
+      recognition.continuous = true;
       recognition.interimResults = true;
-      recognition.addEventListener('result', (event) => {
+      recognition.onresult = (event) => {
         const transcript = Array.from(event.results)
           .map((result) => result[0])
           .map((result) => result.transcript)
           .join('');
         setTranscription(transcript);
-      });
+      };
+      setRecognition(recognition);
     }
   }, []);
 
   const startRecording = () => {
-    recognition.start();
-    setIsRecording(true);
+    if (recognition) {
+      recognition.start();
+      setIsRecording(true);
+    }
   };
 
   const stopRecording = () => {
-    recognition.stop();
-    setIsRecording(false);
+    if (recognition) {
+      recognition.stop();
+      setIsRecording(false);
+    }
   };
 
   return (
@@ -36,8 +44,8 @@ export const  SpeechToText = () => {
       ) : (
         <button onClick={startRecording}>Start recording</button>
       )}
-      <p>{transcription}</p>
+      <MainChat transcription={transcription} stopRecording={stopRecording} startRecording={startRecording}/>
+      <VoiceBtn/>
     </div>
   );
 };
-

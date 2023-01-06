@@ -15,7 +15,20 @@
   }
 
   a {
+    font-size: 20px;
     text-decoration: none;
-    color: white;
+    color: #a6a6a6;
+    transition: opacity .1s ease-in-out;
+
+  }
+  a:hover {
+    transition: opacity .1s ease-in-out;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    transition-property: opacity;
+    font-size: 20px;
+    text-decoration: none;
+    color: #fdfdfdca;
   }
 }

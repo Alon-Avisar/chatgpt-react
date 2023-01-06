@@ -11,9 +11,9 @@ export const HomePage = () => {
             
             onInit={(typewriter) => {
               typewriter
-                .typeString("Welcome to SlideShow.")
-                .pauseFor(2000)
-                .deleteAll()
+                // .typeString("Welcome to SlideShow.")
+                // .pauseFor(2000)
+                // .deleteAll()
                 .typeString("Generative storytelling has arrived.")
                 .pauseFor(2000)
                 // .deleteAll()
