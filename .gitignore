@@ -8,8 +8,8 @@
 # testing
 /coverage
 # cmp
+cmp/*
 
-/cmp
 # production
 /build
 

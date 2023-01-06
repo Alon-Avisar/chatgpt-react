@@ -120,7 +120,7 @@ export const MainChat = ({transcription , stopRecording ,startRecording}) => {
         </div>
 
       </section>
-        {/* <button onClick={updateInput}>Update Input</button> */}
+        <button onClick={updateInput}>Update Input</button>
     </div>
   );
 };
