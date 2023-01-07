@@ -4,8 +4,8 @@ import { SpeechToText } from "./speach-to-text";
 export const SlideShow = () => {
     return (
         <div>
-            <SpeechToText/>
-            {/* <MainChat/> */}
+            {/* <SpeechToText/> */}
+            <MainChat/>
         </div>
     )
 }

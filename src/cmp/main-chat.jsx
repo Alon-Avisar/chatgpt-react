@@ -2,14 +2,17 @@ import React, { useState, useEffect, useRef } from "react";
 import { ChatMsg } from "./chat-msg";
 import AddIcon from "@mui/icons-material/Add";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import MicNoneIcon from "@mui/icons-material/MicNone";
+import PauseIcon from "@mui/icons-material/Pause";
 
-export const MainChat = ({transcription , stopRecording ,startRecording}) => {
-  console.log('transcription:' , transcription)
-  
+export const MainChat = ({}) => {
   const [input, setInput] = useState("");
   const [chatLog, setChatLog] = useState([]);
   const [models, setModels] = useState([]);
   const [currentModel, setCurrentModel] = useState("ada");
+  const [transcription, setTranscription] = useState("");
+  const [isRecording, setIsRecording] = useState(false);
+  const [recognition, setRecognition] = useState(null);
 
   const inputRef = useRef(null);
 
@@ -17,13 +20,27 @@ export const MainChat = ({transcription , stopRecording ,startRecording}) => {
     inputRef.current.focus();
     setInput(transcription);
     getModels();
-  }, [transcription , inputRef ]);
+  }, [transcription, inputRef]);
 
+  useEffect(() => {
+    if ("webkitSpeechRecognition" in window) {
+      const recognition = new window.webkitSpeechRecognition();
+      recognition.continuous = true;
+      recognition.interimResults = true;
+      recognition.onresult = (event) => {
+        const transcript = Array.from(event.results)
+          .map((result) => result[0])
+          .map((result) => result.transcript)
+          .join("");
+        setTranscription(transcript);
+      };
+      setRecognition(recognition);
+    }
+  }, []);
 
   function clearChat() {
     setChatLog([]);
   }
-
 
   async function getModels() {
     try {
@@ -67,13 +84,25 @@ export const MainChat = ({transcription , stopRecording ,startRecording}) => {
   }
 
   function updateInput() {
-    setInput(input ,transcription);
+    setInput(input, transcription);
     stopRecording();
-    inputRef.current.focus()
+    inputRef.current.focus();
   }
+  const startRecording = () => {
+    if (recognition) {
+      recognition.start();
+      setIsRecording(true);
+    }
+  };
+
+  const stopRecording = () => {
+    if (recognition) {
+      recognition.stop();
+      setIsRecording(false);
+    }
+  };
 
   return (
-    
     <div className="App">
       <aside className="sidemenu">
         <div className="side-menu-btn" onClick={clearChat}>
@@ -102,25 +131,37 @@ export const MainChat = ({transcription , stopRecording ,startRecording}) => {
           </div>
         </div>
         <div className="chat-input-holder">
-          <form onSubmit={handleSubmit}>
-            <button onClick={updateInput} className="my-button">
-            
-              <NavigateNextIcon />
-            </button>
+         
+          <form id="form-id" onSubmit={handleSubmit}>
             <input
-            type="text"
-              placeholder="Hi human, ask me anything!"
+              type="text"
+              placeholder="Chat here."
               value={input}
               ref={inputRef}
               onClick={() => console.log("Input clicked")}
               onChange={(event) => setInput(event.target.value)}
               className="text-input-area"
             />
+          <button form="form-id" onClick={updateInput} className="my-button">
+            <NavigateNextIcon />
+          </button>
+          <div className="next-icon">
+            {isRecording ? (
+              <div onClick={stopRecording}>
+                <PauseIcon fontSize="medium" />
+              </div>
+            ) : (
+              <div onClick={startRecording}>
+                <MicNoneIcon fontSize="medium" />
+              </div>
+            )}
+          </div>
           </form>
+          
         </div>
-
       </section>
-        <button onClick={updateInput}>Update Input</button>
+      {/* <SpeechToText/>  */}
+      {/* <button onClick={updateInput}>Update Input</button> */}
     </div>
   );
 };

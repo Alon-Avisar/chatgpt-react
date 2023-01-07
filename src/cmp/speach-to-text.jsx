@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { MainChat } from './main-chat';
-import { VoiceBtn } from './voice-btn';
+import MicNoneIcon from '@mui/icons-material/MicNone';
+import PauseIcon from '@mui/icons-material/Pause';
 
 export const SpeechToText = () => {
   const [transcription, setTranscription] = useState('');
@@ -40,12 +40,12 @@ export const SpeechToText = () => {
   return (
     <div>
       {isRecording ? (
-        <button onClick={stopRecording}>Stop recording</button>
-      ) : (
-        <button onClick={startRecording}>Start recording</button>
-      )}
-      <MainChat transcription={transcription} stopRecording={stopRecording} startRecording={startRecording}/>
-      <VoiceBtn/>
+        <div onClick={stopRecording} ><PauseIcon/></div> 
+        
+        ) : (
+          <div onClick={startRecording}><MicNoneIcon/></div>
+        )}
+      {/* <MainChat transcription={transcription} stopRecording={stopRecording} startRecording={startRecording}/> */}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import TypeWriter from "typewriter-effect";
 import Spline from "@splinetool/react-spline";
-import { MyVideo } from "./into-video";
+import { MyVideo } from "./intro-video";
 
 export const HomePage = () => {
     return (
@@ -28,12 +28,8 @@ export const HomePage = () => {
       
       </div> */}
      
-
-
-  
         </div>
         <MyVideo/>
-
         </div>
     )
 }
