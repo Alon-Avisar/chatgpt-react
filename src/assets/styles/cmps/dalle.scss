@@ -1,0 +1,30 @@
+.delle-img{
+
+.the-story-img{
+  width: 600px;
+}
+
+ form{
+
+   input{
+    opacity: 0;
+   }
+ }
+}
+
+.the-story-main {
+  display: flex;
+  flex-direction: row;
+  gap: 172px;
+  margin-top: 50px;
+}
+.story-img{
+  min-width:512px ;
+}
+.story-text {
+  display: flex;
+  align-items: center;
+  font-size: 33px;
+
+  
+}

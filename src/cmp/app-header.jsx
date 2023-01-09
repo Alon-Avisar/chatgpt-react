@@ -5,11 +5,11 @@ export const AppHeader = () => {
   return (
     <header className="app-header main-layout">
       <div className="sub-header">
-        <Link to="/home">
+        <Link to="/">
           <img src={AiImg} alt="" />
         </Link>
         <nav>
-          <Link to="/home">Home</Link>
+          <Link to="/">Home</Link>
           <Link to="/slideshow"> Try SlideShow</Link>
         </nav>
        

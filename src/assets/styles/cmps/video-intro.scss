@@ -4,15 +4,17 @@
   justify-content: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .text-input-area {
     width: 20%;
+  }
+  .chat-input-holder {
+    width: 700px;
   }
   .video-intro video {
     width: 300px;
   }
   .chatbox {
-    max-width: 400px;
     .my-button {
       display: flex;
       justify-content: center;
@@ -23,9 +25,21 @@
 }
 
 @media (max-width: 390px) {
-  .text-input-area {
-    width: 20%;
+
+  .chat-input-holder {
+    width: 300px;
   }
+  .spline {
+    width: 100px;
+    height: 100px;
+    margin-top: 110px;
+    display: none;
+   }
+   .spline-moblie{
+    display: block;
+    margin-top: -200px;
+   }
+
   .video-intro video {
     width: 300px;
   }

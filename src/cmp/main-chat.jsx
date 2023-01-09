@@ -4,6 +4,7 @@ import AddIcon from "@mui/icons-material/Add";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import MicNoneIcon from "@mui/icons-material/MicNone";
 import PauseIcon from "@mui/icons-material/Pause";
+import { TheStory } from "./the-story";
 
 export const MainChat = ({}) => {
   const [input, setInput] = useState("");
@@ -13,6 +14,11 @@ export const MainChat = ({}) => {
   const [transcription, setTranscription] = useState("");
   const [isRecording, setIsRecording] = useState(false);
   const [recognition, setRecognition] = useState(null);
+  const [gptMsg, setGptMsg] = useState("");
+  const [userMsg, setUserMsg] = useState("");
+
+
+  
 
   const inputRef = useRef(null);
 
@@ -60,7 +66,7 @@ export const MainChat = ({}) => {
     e.preventDefault();
     setInput("");
     const newMessage = { user: "me", message: input };
-
+    setUserMsg(input)
     try {
       const chatLogNew = [...chatLog, newMessage];
       setChatLog(chatLogNew);
@@ -77,6 +83,9 @@ export const MainChat = ({}) => {
 
       const data = await response.json();
       const gptMessage = { user: "gpt", message: data.message };
+      setGptMsg(gptMessage.message);
+      console.log(":gptMessage", gptMessage.message);
+
       setChatLog([...chatLogNew, gptMessage]);
     } catch (error) {
       console.error(error);
@@ -120,18 +129,17 @@ export const MainChat = ({}) => {
         </div> */}
       </aside>
       <section className="chatbox">
-        <div className="chat-log">
+        {/* <div className="chat-log">
           {chatLog.map((message, index) => (
             <ChatMsg key={index} message={message} />
           ))}
-        </div>
+        </div> */}
         <div className="chat-log">
           <div className="chat-msg chatgpt">
             <div className="chat-msg-center" />
           </div>
         </div>
         <div className="chat-input-holder">
-         
           <form id="form-id" onSubmit={handleSubmit}>
             <input
               type="text"
@@ -142,26 +150,26 @@ export const MainChat = ({}) => {
               onChange={(event) => setInput(event.target.value)}
               className="text-input-area"
             />
-          <button form="form-id" onClick={updateInput} className="my-button">
-            <NavigateNextIcon />
-          </button>
-          <div className="next-icon">
-            {isRecording ? (
-              <div onClick={stopRecording}>
-                <PauseIcon fontSize="medium" />
-              </div>
-            ) : (
-              <div onClick={startRecording}>
-                <MicNoneIcon fontSize="medium" />
-              </div>
-            )}
-          </div>
+            <button form="form-id" onClick={updateInput} className="my-button">
+              <NavigateNextIcon />
+            </button>
+            <div className="next-icon">
+              {isRecording ? (
+                <div onClick={stopRecording}>
+                  <PauseIcon fontSize="medium" />
+                </div>
+              ) : (
+                <div onClick={startRecording}>
+                  <MicNoneIcon fontSize="medium" />
+                </div>
+              )}
+            </div>
           </form>
-          
         </div>
       </section>
-      {/* <SpeechToText/>  */}
-      {/* <button onClick={updateInput}>Update Input</button> */}
+      <div className="chat-log">
+        <TheStory gptMsg={gptMsg} userMsg={userMsg} input={input}/>
+      </div>
     </div>
   );
 };

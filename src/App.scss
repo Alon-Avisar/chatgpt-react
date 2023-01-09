@@ -27,6 +27,7 @@ html {
   .app-header {
     width: 100%;
     background-color: #000000;
+    margin-bottom: 30px;
 
     img {
       height: 80px;
@@ -55,9 +56,9 @@ html {
   .chatbox {
     display: grid;
     align-content: space-between;
-    background-color: #0d0d0d;
-    height: 500px;
-    max-height: 500px;
+    // background-color: #0d0d0d;
+    // height: 510px;
+    // max-height: 500px;
     z-index: 100;
     overflow-y: overlay;
   }
@@ -68,7 +69,6 @@ html {
     justify-content: flex-start;
     padding: 15px;
     text-align: left;
-    border: 1px solid #545557;
     border-radius: 5px;
     font-size: 17px;
     transition: ease 0.25s all;
@@ -79,7 +79,7 @@ html {
   }
 
   .side-menu-btn:hover {
-    background-color: rgb(255, 255, 255, 0.2);
+    // background-color: rgb(255, 255, 255, 0.2);
     cursor: pointer;
   }
 
@@ -102,22 +102,13 @@ html {
     color: white;
     height: 50px;
     box-shadow: 0 0 8px 0 rgb(0 0 0 / 25%);
-    align-content: flex-end;
-    max-width: 300px;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+
   }
   .text-input-area::placeholder {
     margin-top: 4px;
     background-color: #40414f;
   }
-  .text-input-area:focus {
-    width: auto;
-    overflow: visible;
-    white-space: normal;
-  }
+
   form {
     display: flex;
     justify-content: center;
@@ -154,7 +145,7 @@ html {
   }
   .chatbox {
     .chat-msg {
-      padding: 12px;
+      // padding: 12px;
       align-items: center;
     }
 

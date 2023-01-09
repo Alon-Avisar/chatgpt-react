@@ -12,9 +12,9 @@ function App() {
         <AppHeader />
 
       <div className="main-layout">
-      <main className="container">
+      <main className="container  ">
       <Routes>
-      <Route path="/home" element={<HomePage />}/>
+      <Route path="/" element={<HomePage />}/>
       <Route path="/slideshow" element={<SlideShow />}/>
       </Routes>
       </main>
