@@ -25,19 +25,43 @@
 }
 
 @media (max-width: 390px) {
+  
+  .headeline{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+ span{
+  font-size: 23px;
+ }
+}
+.main-layout{
+  overflow: hidden;
+  width: 100%; 
+  overflow: hidden;
+  
+}
+.home-page{
+  max-width: 310px;
 
-  .chat-input-holder {
+}
+.type-writer{
+  font-size: 30px;
+  max-width: 300px;
+
+}
+.chat-input-holder {
     width: 300px;
   }
+  .spline-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .spline {
-    width: 100px;
-    height: 100px;
-    margin-top: 110px;
-    display: none;
-   }
-   .spline-moblie{
-    display: block;
-    margin-top: -200px;
+    position: absolute;
+    margin-top: 286px;
+    margin-left:-49px;
+    // display: none;
    }
 
   .video-intro video {

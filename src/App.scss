@@ -84,6 +84,7 @@ html {
   }
 
   .chat-input-holder {
+    margin-top: 70px;
     border-radius: 10px;
     padding: 21px;
     background-color: #343641;
@@ -107,6 +108,8 @@ html {
   .text-input-area::placeholder {
     margin-top: 4px;
     background-color: #40414f;
+    display: flex;
+    text-align: center;
   }
 
   form {
@@ -145,7 +148,7 @@ html {
   }
   .chatbox {
     .chat-msg {
-      // padding: 12px;
+      padding: 12px;
       align-items: center;
     }
 

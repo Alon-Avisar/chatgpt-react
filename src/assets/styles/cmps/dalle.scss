@@ -1,15 +1,15 @@
-.delle-img{
-
-.the-story-img{
-  width: 600px;
-}
-
- form{
-
-   input{
-    opacity: 0;
-   }
- }
+.delle-img {
+  .the-story-img {
+    width: 600px;
+    img {
+      border-radius: 10px;
+    }
+  }
+  form {
+    input {
+      opacity: 0;
+    }
+  }
 }
 
 .the-story-main {
@@ -18,13 +18,21 @@
   gap: 172px;
   margin-top: 50px;
 }
-.story-img{
-  min-width:512px ;
+.story-img {
+  min-width: 512px;
 }
 .story-text {
   display: flex;
   align-items: center;
   font-size: 33px;
+}
 
-  
+.headeline {
+  display: flex;
+  margin-top: 40px;
+  flex-direction: column;
+  font-size: 30px;
+  font-family: monospace;
+  justify-content: center;
+  align-items: center;
 }

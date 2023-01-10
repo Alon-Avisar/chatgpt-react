@@ -6,6 +6,7 @@ import MicNoneIcon from "@mui/icons-material/MicNone";
 import PauseIcon from "@mui/icons-material/Pause";
 import { TheStory } from "./the-story";
 
+
 export const MainChat = ({}) => {
   const [input, setInput] = useState("");
   const [chatLog, setChatLog] = useState([]);
@@ -43,6 +44,7 @@ export const MainChat = ({}) => {
       setRecognition(recognition);
     }
   }, []);
+
 
   function clearChat() {
     setChatLog([]);
@@ -115,8 +117,8 @@ export const MainChat = ({}) => {
     <div className="App">
       <aside className="sidemenu">
         <div className="side-menu-btn" onClick={clearChat}>
-          <AddIcon />
-          <span>New Chat</span>
+          {/* <AddIcon />
+          <span >New Chat</span> */}
         </div>
         {/* <div className="models">
           <select onChange={(e) => setCurrentModel(e.target.value)}>
@@ -134,16 +136,20 @@ export const MainChat = ({}) => {
             <ChatMsg key={index} message={message} />
           ))}
         </div> */}
-        <div className="chat-log">
-          <div className="chat-msg chatgpt">
+        {/* <div className="chat-log"> */}
+          {/* <div className="chat-msg chatgpt">
             <div className="chat-msg-center" />
-          </div>
+          </div> */}
+        {/* </div> */}
+        <div className="headeline">
+          <span>Spark creativity, generate unique stories</span>
+          <span>and images with just a few words.</span>
         </div>
         <div className="chat-input-holder">
           <form id="form-id" onSubmit={handleSubmit}>
             <input
               type="text"
-              placeholder="Chat here."
+              placeholder="Enter a story topic here."
               value={input}
               ref={inputRef}
               onClick={() => console.log("Input clicked")}
@@ -170,6 +176,7 @@ export const MainChat = ({}) => {
       <div className="chat-log">
         <TheStory gptMsg={gptMsg} userMsg={userMsg} input={input}/>
       </div>
+
     </div>
   );
 };

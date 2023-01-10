@@ -19,27 +19,13 @@ export const HomePage = () => {
               .start();
           }}
         />
-        <div className="spline">
-          {/* <Spline
-          style={{ width: "70%", height: "70%" }}
-        scene="https://prod.spline.design/BSdUaRNHSDzUUuPB/scene.splinecode" /> */}
-          {/* <Spline scene="https://prod.spline.design/1OMioU0tWbaPbbUQ/scene.splinecode" /> */}
-
-          {/* <Spline  className="spline"   scene="https://prod.spline.design/1OMioU0tWbaPbbUQ/scene.splinecode" /> */}
-        </div>
       </div>
-      {/* <Spline  className="spline" scene="https://prod.spline.design/qL7GvtdfgitppLTA/scene.splinecode" /> */}
-
-      {/* <Spline   scene="https://prod.spline.design/qL7GvtdfgitppLTA/scene.splinecode" /> */}
-
-
-
-      {/* <div className="spline-moblie">
-      <Spline scene="https://prod.spline.design/1OMioU0tWbaPbbUQ/scene.splinecode" />
-
-      </div> */}
-      {/* <MyVideo/> */}
-      
+        <div className="spline-main">
+          <Spline
+            className="spline"
+            scene="https://prod.spline.design/JIwHfxfUQMYWegwk/scene.splinecode"
+          />
+        </div>
     </div>
   );
 };
