@@ -14,7 +14,7 @@ export const DalleImg = ({ gptMsg, userMsg }) => {
     handleChange();
     setPrompt(userMsg);
     inputRef.current.focus();
-  }, [userMsg]);
+  }, [userMsg, prompt ]);
 
   const fetchImage = async () => {
     const response = await axios.get(
