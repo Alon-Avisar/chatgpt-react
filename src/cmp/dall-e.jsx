@@ -18,7 +18,7 @@ export const DalleImg = ({ gptMsg, userMsg }) => {
 
   const fetchImage = async () => {
     const response = await axios.get(
-      `http://localhost:3080/image?prompt=${prompt}`
+      `https://chatgpt-react-backend.onrender.com/image?prompt=${prompt}`
     );
     console.log(response.data);
     setImageUrl(response.data.data[0].url);

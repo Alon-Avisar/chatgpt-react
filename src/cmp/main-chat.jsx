@@ -73,7 +73,7 @@ export const MainChat = ({}) => {
       const chatLogNew = [...chatLog, newMessage];
       setChatLog(chatLogNew);
       const messages = chatLogNew.map(({ message }) => message).join("");
-      const response = await fetch("http://localhost:3080", {
+      const response = await fetch("https://chatgpt-react-backend.onrender.com", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ message: messages, currentModel }),
