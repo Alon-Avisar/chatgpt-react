@@ -8,13 +8,14 @@ export const DalleImg = ({ gptMsg, userMsg }) => {
   const [prompt, setPrompt] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+
   const inputRef = useRef(null);
 
   useEffect(() => {
     handleChange();
     setPrompt(userMsg);
     inputRef.current.focus();
-  }, [userMsg , prompt]);
+  }, [userMsg]);
   
 
   const fetchImage = async () => {

@@ -9,8 +9,8 @@
     align-items: center;
     justify-content: space-between;
 
-    nav>*:not(:last-child){
-        margin-inline-end: 10px;
+    nav > *:not(:last-child) {
+      margin-inline-end: 10px;
     }
   }
 
@@ -18,11 +18,10 @@
     font-size: 20px;
     text-decoration: none;
     color: #a6a6a6;
-    transition: opacity .1s ease-in-out;
-
+    transition: opacity 0.1s ease-in-out;
   }
   a:hover {
-    transition: opacity .1s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
     transition-duration: 0.1s;
     transition-timing-function: ease-in-out;
     transition-delay: 0s;
