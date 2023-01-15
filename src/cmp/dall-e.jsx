@@ -37,7 +37,7 @@ export const DalleImg = ({ gptMsg, userMsg }) => {
         <label>
           <input
             type="text"
-            value={prompt}
+            value={prompt + "Sigma 24 mm f/8, 1/10 sec"}
             onChange={handleChange}
             ref={inputRef}
           />
