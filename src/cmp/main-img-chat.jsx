@@ -1,14 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ChatMsg } from "./chat-msg";
 import AddIcon from "@mui/icons-material/Add";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import MicNoneIcon from "@mui/icons-material/MicNone";
 import PauseIcon from "@mui/icons-material/Pause";
-import { DalleImg } from "./dall-e";
 import { TheStoryAi } from "./the-story-ai";
 import { CircularIndeterminate } from "./loader";
-
-
 
 export const MainImgChat = ({}) => {
   const [input, setInput] = useState("");
@@ -21,15 +17,11 @@ export const MainImgChat = ({}) => {
   const [gptMsg, setGptMsg] = useState("");
   const [userMsg, setUserMsg] = useState("");
 
-
-  
-
   const inputRef = useRef(null);
 
   useEffect(() => {
     inputRef.current.focus();
     setInput(transcription);
-    // getModels();
   }, [transcription, inputRef]);
 
   useEffect(() => {
@@ -48,41 +40,28 @@ export const MainImgChat = ({}) => {
     }
   }, []);
 
-
   function clearChat() {
     setChatLog([]);
   }
-
-  // async function getModels() {
-  //   try {
-  //     const response = await fetch("http://localhost:3080/models");
-  //     const data = await response.json();
-  //     console.log(data);
-  //     if (response.status !== 200) {
-  //       throw new Error(data.message);
-  //     }
-  //     setModels(data.models.data);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
 
   async function handleSubmit(e) {
     e.preventDefault();
     setInput("");
     const newMessage = { user: "me", message: input };
-    setUserMsg(input)
+    setUserMsg(input);
     try {
       const chatLogNew = [...chatLog, newMessage];
       setChatLog(chatLogNew);
       const messages = chatLogNew.map(({ message }) => message).join("");
-      const response = await fetch("https://chatgpt-react-backend.onrender.com", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ message: messages, currentModel }),
-      });
-  
-      
+      const response = await fetch(
+        "https://chatgpt-react-backend.onrender.com",
+        {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ message: messages, currentModel }),
+        }
+      );
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -97,7 +76,6 @@ export const MainImgChat = ({}) => {
       console.error(error);
     }
   }
-
 
   function updateInput() {
     setInput(input, transcription);
@@ -123,20 +101,11 @@ export const MainImgChat = ({}) => {
       <aside className="sidemenu">
         <div className="side-menu-btn" onClick={clearChat}>
           <AddIcon />
-          <span >New Img Topic</span>
+          <span>New Img Topic</span>
         </div>
       </aside>
       <section className="chatbox">
-        {/* <div className="chat-log">
-          {chatLog.map((message, index) => (
-            <ChatMsg key={index} message={message} />
-          ))}
-        </div> */}
-        <div className="chat-log"> 
-         {/* <div className="chat-msg chatgpt">
-            <div className="chat-msg-center" />
-          </div>  */}
-         </div>
+        <div className="chat-log"></div>
         <div className="headeline">
           <span>Generate incredible images</span>
           <span>with limitless inspiration.</span>
@@ -169,10 +138,9 @@ export const MainImgChat = ({}) => {
           </form>
         </div>
       </section>
-      <div className="">  
-        <TheStoryAi gptMsg={gptMsg} userMsg={userMsg} input={input}/>
+      <div className="">
+        <TheStoryAi gptMsg={gptMsg} userMsg={userMsg} input={input} />
       </div>
-
     </div>
   );
 };

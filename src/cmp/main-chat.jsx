@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ChatMsg } from "./chat-msg";
 import AddIcon from "@mui/icons-material/Add";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import MicNoneIcon from "@mui/icons-material/MicNone";
 import PauseIcon from "@mui/icons-material/Pause";
-import { TheStory } from "./the-story";
 
 
 export const MainChat = ({}) => {
@@ -120,21 +118,9 @@ export const MainChat = ({}) => {
           <AddIcon />
           <span >New Story Topic</span>
         </div>
-        {/* <div className="models">
-          <select onChange={(e) => setCurrentModel(e.target.value)}>
-            {models.map((model, idx) => (
-              <option key={idx} value={model.id}>
-                {model.id}
-              </option>
-            ))}
-          </select>
-        </div> */}
       </aside>
       <section className="chatbox">
        <div className="chat-log">
-          {/* {chatLog.map((message, index) => (
-            <ChatMsg key={index} message={message} />
-          ))} */}
         </div> 
       <div className="chat-log">
           <div className="chat-msg chatgpt">
@@ -174,7 +160,6 @@ export const MainChat = ({}) => {
         </div>
       </section>
       <div className="chat-log">
-        <TheStory gptMsg={gptMsg} userMsg={userMsg} input={input}/>
       </div>
 
     </div>

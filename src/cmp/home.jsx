@@ -1,6 +1,5 @@
 import TypeWriter from "typewriter-effect";
 import Spline from "@splinetool/react-spline";
-import { MyVideo } from "./intro-video";
 import { Link } from "react-router-dom";
 
 export const HomePage = () => {
@@ -10,13 +9,11 @@ export const HomePage = () => {
         <TypeWriter
           onInit={(typewriter) => {
             typewriter
-              // .typeString("Welcome to Blogger.")
-              // .pauseFor(2000)
-              // .deleteAll()
+              .typeString("Welcome to Story.ai")
+              .pauseFor(2000)
+              .deleteAll()
               .typeString("Generative storytelling has arrived.")
               .pauseFor(2000)
-              // .deleteAll()
-              // .typeString("Enjoy (:")
               .start();
           }}
         />
@@ -29,9 +26,7 @@ export const HomePage = () => {
           />
         </div>
         <div className="storyai-home main-layout">
-        <Link to="/img-generation"> <h2>Try Story.ai</h2></Link>
-
-      
+        <Link to="/img-generation"> <h2>Try Story.ai</h2></Link>   
       </div>
     </div>
   );
