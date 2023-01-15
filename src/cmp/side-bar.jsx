@@ -52,7 +52,7 @@ export default function TemporaryDrawer() {
           <ListItem key={index}>
             <div   className="side-bar-navigations">
               <Link to="/">Home</Link>
-              <Link to="/blogger">Blogger</Link>
+              {/* <Link to="/blogger">Blogger</Link> */}
               <Link to="/img-generation">IMG.ai</Link>
             </div>
           </ListItem>

@@ -16,7 +16,7 @@ function App() {
       <main className="container  ">
       <Routes>
       <Route path="/" element={<HomePage />}/>
-      <Route path="/blogger" element={<SlideShow />}/>
+      {/* <Route path="/blogger" element={<SlideShow />}/> */}
       <Route path="/img-generation" element={ <MainImgChat/>}/>
       </Routes>
       </main>

@@ -12,7 +12,7 @@ export const AppHeader = () => {
         <nav>
           <div className="sub-header-section">
           <Link to="/">Home</Link>
-          <Link to="/blogger">Blogger</Link>
+          {/* <Link to="/blogger">Blogger</Link> */}
           <Link to="/img-generation">IMG.ai</Link>
           </div>
           <div>
