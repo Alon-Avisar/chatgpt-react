@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import AiImg from "../assets/imgs/ai.png";
+import TemporaryDrawer from "./side-bar";
 
 export const AppHeader = () => {
   return (
@@ -9,37 +10,17 @@ export const AppHeader = () => {
           <img src={AiImg} alt="" />
         </Link>
         <nav>
+          <div className="sub-header-section">
           <Link to="/">Home</Link>
-          <Link to="/slideshow"> Try SlideShow</Link>
+          <Link to="/blogger">Blogger</Link>
+          <Link to="/img-generation">IMG.ai</Link>
+          </div>
+          <div>
+            <TemporaryDrawer  fontSize="large" />
+          </div>
         </nav>
-       
       </div>
-    
     </header>
   );
 };
 
-
-
-{/* <header className="app-header main-layout">
-<div className="sub-header">
-  <Link to="/home">
-    <img src={AiImg} alt="" />
-  </Link>
-  <nav>
-    {/* <Link to="/home">Home</Link> */}
-
-//     <div className="btn-1">
-//       <Link to="/home">
-//         <span>Home</span>
-//       </Link>
-//     </div>
-
-//     <div className="btn-1">
-//       <Link to="/slideshow">
-//         <span>Try SlideShow</span>
-//       </Link>
-//     </div>
-//   </nav>
-// </div>
-// </header> 

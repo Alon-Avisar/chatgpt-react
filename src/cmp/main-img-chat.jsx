@@ -4,10 +4,13 @@ import AddIcon from "@mui/icons-material/Add";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import MicNoneIcon from "@mui/icons-material/MicNone";
 import PauseIcon from "@mui/icons-material/Pause";
-import { TheStory } from "./the-story";
+import { DalleImg } from "./dall-e";
+import { TheStoryAi } from "./the-story-ai";
+import { CircularIndeterminate } from "./loader";
 
 
-export const MainChat = ({}) => {
+
+export const MainImgChat = ({}) => {
   const [input, setInput] = useState("");
   const [chatLog, setChatLog] = useState([]);
   const [models, setModels] = useState([]);
@@ -78,7 +81,8 @@ export const MainChat = ({}) => {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ message: messages, currentModel }),
       });
-
+  
+      
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -93,6 +97,7 @@ export const MainChat = ({}) => {
       console.error(error);
     }
   }
+
 
   function updateInput() {
     setInput(input, transcription);
@@ -118,38 +123,29 @@ export const MainChat = ({}) => {
       <aside className="sidemenu">
         <div className="side-menu-btn" onClick={clearChat}>
           <AddIcon />
-          <span >New Story Topic</span>
+          <span >New Img Topic</span>
         </div>
-        {/* <div className="models">
-          <select onChange={(e) => setCurrentModel(e.target.value)}>
-            {models.map((model, idx) => (
-              <option key={idx} value={model.id}>
-                {model.id}
-              </option>
-            ))}
-          </select>
-        </div> */}
       </aside>
       <section className="chatbox">
-       <div className="chat-log">
-          {/* {chatLog.map((message, index) => (
+        {/* <div className="chat-log">
+          {chatLog.map((message, index) => (
             <ChatMsg key={index} message={message} />
-          ))} */}
-        </div> 
-      <div className="chat-log">
-          <div className="chat-msg chatgpt">
+          ))}
+        </div> */}
+        <div className="chat-log"> 
+         {/* <div className="chat-msg chatgpt">
             <div className="chat-msg-center" />
-          </div> 
-         </div> 
+          </div>  */}
+         </div>
         <div className="headeline">
-          <span>Spark creativity and generate unique</span>
-          <span>stories with just a few words.</span>
+          <span>Generate incredible images</span>
+          <span>with limitless inspiration.</span>
         </div>
         <div className="chat-input-holder">
           <form id="form-id" onSubmit={handleSubmit}>
             <input
               type="text"
-              placeholder="Enter a story topic here."
+              placeholder="Enter a image topic."
               value={input}
               ref={inputRef}
               onClick={() => console.log("Input clicked")}
@@ -173,8 +169,8 @@ export const MainChat = ({}) => {
           </form>
         </div>
       </section>
-      <div className="chat-log">
-        <TheStory gptMsg={gptMsg} userMsg={userMsg} input={input}/>
+      <div className="">  
+        <TheStoryAi gptMsg={gptMsg} userMsg={userMsg} input={input}/>
       </div>
 
     </div>

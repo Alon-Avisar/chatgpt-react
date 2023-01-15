@@ -5,7 +5,7 @@ export const SlideShow = () => {
         <div>
             <MainChat/>
             <div className="dalle-continer">
-
+           
             </div>
         </div>
     )

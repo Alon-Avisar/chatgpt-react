@@ -9,7 +9,7 @@ export const HomePage = () => {
         <TypeWriter
           onInit={(typewriter) => {
             typewriter
-              // .typeString("Welcome to SlideShow.")
+              // .typeString("Welcome to Blogger.")
               // .pauseFor(2000)
               // .deleteAll()
               .typeString("Generative storytelling has arrived.")

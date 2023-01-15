@@ -1,10 +1,18 @@
 .delle-img {
+  width: 680px;
+  margin-left: -25px;
+  display: flex;
+  margin-top: 50px;
   .the-story-img {
-    width: 600px;
+
     img {
-      border-radius: 10px;
+    width: 550px;
+    border-radius: 10px;
+
     }
+
   }
+  justify-content: center;
   form {
     input {
       opacity: 0;
@@ -13,23 +21,27 @@
 }
 
 .the-story-main {
-  display: flex;
+  margin-left: -88px;
   flex-direction: row;
   gap: 172px;
   margin-top: 50px;
 }
 .story-img {
   min-width: 512px;
+  // margin-right: 126px;
+
 }
 .story-text {
   display: flex;
   align-items: center;
   font-size: 33px;
+  margin-left: 94px;
+  padding: 37px;
 }
 
 .headeline {
   display: flex;
-  margin-top: 40px;
+  margin-top: 25px;
   flex-direction: column;
   font-size: 30px;
   font-family: monospace;

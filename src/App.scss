@@ -1,7 +1,8 @@
 * > {
   box-sizing: border-box;
 }
-material-icons {
+
+.material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
@@ -27,11 +28,12 @@ html {
   .app-header {
     width: 100%;
     background-color: #000000;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 
     img {
-      height: 80px;
+      height:80px;
     }
+    
     .sub-header {
       display: flex;
       align-items: center;
@@ -42,7 +44,12 @@ html {
       nav > *:not(:last-child) {
         margin-inline-end: 15px;
       }
-
+      nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     
+      }
       h1 {
         margin-left: 20px;
       }
@@ -54,20 +61,15 @@ html {
   }
 
   .chatbox {
-    display: grid;
-    align-content: space-between;
-    // background-color: #0d0d0d;
-    // height: 510px;
-    // max-height: 500px;
-    z-index: 100;
-    overflow-y: overlay;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .side-menu-btn {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 15px;
     text-align: left;
     border-radius: 5px;
     font-size: 17px;
@@ -84,11 +86,17 @@ html {
   }
 
   .chat-input-holder {
-    margin-top: 70px;
+    margin-top: 40px;
     border-radius: 10px;
-    padding: 21px;
+    padding: 12px;
     background-color: #343641;
     position: sticky;
+
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   }
 
   .text-input-area {
@@ -112,11 +120,6 @@ html {
     text-align: center;
   }
 
-  form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
   input {
     position: relative;
