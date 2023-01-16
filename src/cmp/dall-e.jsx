@@ -3,7 +3,7 @@ import axios from "axios";
 import { CircularIndeterminate } from "./loader";
 
 
-export const DalleImg = ({ gptMsg, userMsg }) => {
+export const DalleImg = ({ gptMsg, userMsg ,clearChat}) => {
   const [imageUrl, setImageUrl] = useState("");
   const [prompt, setPrompt] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -24,6 +24,7 @@ export const DalleImg = ({ gptMsg, userMsg }) => {
     );
     console.log(response.data);
     setImageUrl(response.data.data[0].url);
+    clearChat()
   };
 
   const handleChange = (event) => {
@@ -32,7 +33,7 @@ export const DalleImg = ({ gptMsg, userMsg }) => {
   };
 
 
-
+  
   return (
     <div className="delle-img main-layout" >
       <form onKeyUp={handleChange}>
@@ -46,7 +47,9 @@ export const DalleImg = ({ gptMsg, userMsg }) => {
         </label>
       </form>
       <div className="the-story-img" >
-      <img src={imageUrl} />  
+      {/* <CircularIndeterminate/>  */}
+      {imageUrl === "" && prompt !== "" ? <CircularIndeterminate/> : <img src={imageUrl} />} 
+      
       </div>
     </div>
   );

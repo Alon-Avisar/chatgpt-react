@@ -41,7 +41,7 @@ export const MainImgChat = ({}) => {
   }, []);
 
   function clearChat() {
-    setChatLog([]);
+    setChatLog("");
   }
 
   async function handleSubmit(e) {
@@ -101,7 +101,7 @@ export const MainImgChat = ({}) => {
       <aside className="sidemenu">
         <div className="side-menu-btn" onClick={clearChat}>
           <AddIcon />
-          <span>New Img Topic</span>
+          <span>New story Topic</span>
         </div>
       </aside>
       <section className="chatbox">
@@ -109,12 +109,13 @@ export const MainImgChat = ({}) => {
         <div className="headeline">
           <span>Generate incredible images</span>
           <span>with limitless inspiration.</span>
+          {/* <span className="example">Click the new story</span> */}
         </div>
         <div className="chat-input-holder">
           <form id="form-id" onSubmit={handleSubmit}>
             <input
               type="text"
-              placeholder="Enter a image topic."
+              placeholder="Enter a story topic."
               value={input}
               ref={inputRef}
               onClick={() => console.log("Input clicked")}
@@ -139,7 +140,7 @@ export const MainImgChat = ({}) => {
         </div>
       </section>
       <div className="">
-        <TheStoryAi gptMsg={gptMsg} userMsg={userMsg} input={input} />
+        <TheStoryAi clearChat={clearChat} gptMsg={gptMsg} userMsg={userMsg} input={input} />
       </div>
     </div>
   );

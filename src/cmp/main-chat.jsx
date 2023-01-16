@@ -45,7 +45,7 @@ export const MainChat = ({}) => {
 
 
   function clearChat() {
-    setChatLog([]);
+    setChatLog('');
   }
 
   // async function getModels() {
