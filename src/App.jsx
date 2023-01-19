@@ -3,12 +3,13 @@ import { Route, Routes } from "react-router-dom";
 import { AppHeader } from "./cmp/app-header";
 import { HomePage } from "./cmp/home";
 import { MainImgChat } from "./cmp/main-img-chat";
+
 function App() {
   return (
 
     
     <div className="App-contianer main-layout">
-        <AppHeader /> 
+        <AppHeader />   
 
       <div className="main-layout">
       <main className="container  ">

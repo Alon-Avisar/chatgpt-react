@@ -47,7 +47,7 @@ export const DalleImg = ({ gptMsg, userMsg ,clearChat}) => {
         </label>
       </form>
       <div className="the-story-img" >
-      {/* <CircularIndeterminate/>  */}
+     
       {imageUrl === "" && prompt !== "" ? <CircularIndeterminate/> : <img src={imageUrl} />} 
       
       </div>

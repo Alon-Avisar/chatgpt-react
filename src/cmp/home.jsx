@@ -1,6 +1,9 @@
 import TypeWriter from "typewriter-effect";
 import Spline from "@splinetool/react-spline";
 import { Link } from "react-router-dom";
+import * as React from 'react';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 export const HomePage = () => {
   return (
@@ -25,9 +28,13 @@ export const HomePage = () => {
             scene="https://prod.spline.design/JIwHfxfUQMYWegwk/scene.splinecode"
           />
         </div>
+        {/* <div className="storyai-home-desktop main-layout">
+        <Link to="/img-generation"> <h2>Create a Story</h2></Link>   
+      </div> */}
         <div className="storyai-home main-layout">
-        <Link to="/img-generation"> <h2>Try Story.ai</h2></Link>   
+        <Link to="/img-generation"> <h2>Create a Story</h2></Link>   
       </div>
+   
     </div>
   );
 };

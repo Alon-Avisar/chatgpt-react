@@ -69,6 +69,7 @@ export const MainImgChat = ({}) => {
       const data = await response.json();
       const gptMessage = { user: "gpt", message: data.message };
       setGptMsg(gptMessage.message);
+      
       console.log(":gptMessage", gptMessage.message);
 
       setChatLog([...chatLogNew, gptMessage]);
@@ -107,12 +108,12 @@ export const MainImgChat = ({}) => {
       <section className="chatbox">
         <div className="chat-log"></div>
         <div className="headeline">
-          <span>Generate incredible images</span>
+          <span>Generate incredible storys</span>
           <span>with limitless inspiration.</span>
           {/* <span className="example">Click the new story</span> */}
         </div>
         <div className="chat-input-holder">
-          <form id="form-id" onSubmit={handleSubmit}>
+          <form id="form-id" onClick={clearChat} onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Enter a story topic."
