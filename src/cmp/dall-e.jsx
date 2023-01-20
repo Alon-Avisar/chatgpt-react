@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { CircularIndeterminate } from "./loader";
+import Jepeta from "../assets/imgs/jepeta.png";
 
-
-export const DalleImg = ({ gptMsg, userMsg ,clearChat}) => {
+export const DalleImg = ({ gptMsg, userMsg, clearChat }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [prompt, setPrompt] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  const [ jepeta ,setJepeta] = useState(false)
 
   const inputRef = useRef(null);
 
@@ -15,8 +15,8 @@ export const DalleImg = ({ gptMsg, userMsg ,clearChat}) => {
     handleChange();
     setPrompt(userMsg);
     inputRef.current.focus();
+    setJepeta(Jepeta)
   }, [userMsg]);
-  
 
   const fetchImage = async () => {
     const response = await axios.get(
@@ -24,7 +24,7 @@ export const DalleImg = ({ gptMsg, userMsg ,clearChat}) => {
     );
     console.log(response.data);
     setImageUrl(response.data.data[0].url);
-    clearChat()
+    clearChat();
   };
 
   const handleChange = (event) => {
@@ -32,10 +32,8 @@ export const DalleImg = ({ gptMsg, userMsg ,clearChat}) => {
     fetchImage();
   };
 
-
-  
   return (
-    <div className="delle-img main-layout" >
+    <div className="delle-img main-layout">
       <form onKeyUp={handleChange}>
         <label>
           <input
@@ -46,11 +44,14 @@ export const DalleImg = ({ gptMsg, userMsg ,clearChat}) => {
           />
         </label>
       </form>
-      <div className="the-story-img" >
-     
-      {imageUrl === "" && prompt !== "" ? <CircularIndeterminate/> : <img src={imageUrl} />} 
-      
+  
+      <div className="the-story-img">
+        {!jepeta && imageUrl === "" && prompt !== "" ? (
+          <CircularIndeterminate />
+        ) : (
+          <img src={prompt === "ועכשיו ברצינות, שים בג׳פטה" ? jepeta : imageUrl} />
+        )}
       </div>
     </div>
   );
-};
+  }
