@@ -110,7 +110,6 @@ export const MainImgChat = ({}) => {
         <div className="headeline">
           <span>Generate incredible storys</span>
           <span>with limitless inspiration.</span>
-          {/* <span className="example">Click the new story</span> */}
         </div>
         <div className="chat-input-holder">
           <form id="form-id" onClick={clearChat} onSubmit={handleSubmit}>

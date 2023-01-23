@@ -14,6 +14,7 @@ export const AppHeader = () => {
           <div className="sub-header-section">
           <Link to="/">Home</Link>
           <Link to="/img-generation">Story.ai</Link>
+          {/* <Link to="/about">About</Link> */}
           </div>
           <div>
             <TemporaryDrawer  fontSize="large" />

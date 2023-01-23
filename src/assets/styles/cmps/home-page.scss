@@ -1,4 +1,28 @@
-.home-page{
-display: flex;
-flex-direction: column;
+.home-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+
+  img {
+    color: darkblue;
+    background-color: #fff;
+    opacity: 0.08;
+    max-width: 100%;
+  }
+}
+
+.about-page {
+  position: absolute;
+  z-index: 100;
+  bottom: 60%;
+  line-height: 1.4;
+  font-size: 25px;
+  width: 700px;
 }

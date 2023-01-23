@@ -3,6 +3,7 @@ import axios from "axios";
 import { CircularIndeterminate } from "./loader";
 import Jepeta from "../assets/imgs/jepeta.png";
 
+
 export const DalleImg = ({ gptMsg, userMsg, clearChat }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [prompt, setPrompt] = useState("");
@@ -32,24 +33,24 @@ export const DalleImg = ({ gptMsg, userMsg, clearChat }) => {
     fetchImage();
   };
 
+
   return (
     <div className="delle-img main-layout">
       <form onKeyUp={handleChange}>
         <label>
           <input
             type="text"
-            value={prompt + "Sigma 24 mm f/8, 1/10 sec"}
+            value={prompt + "van gogh style"}
             onChange={handleChange}
             ref={inputRef}
           />
         </label>
       </form>
-  
       <div className="the-story-img">
-        {!jepeta && imageUrl === "" && prompt !== "" ? (
+        {prompt && imageUrl === "" ? (
           <CircularIndeterminate />
         ) : (
-          <img src={prompt === "ועכשיו ברצינות, שים בג׳פטה" ? jepeta : imageUrl} />
+          <img src={prompt === "ועכשיו ברצינות, שים בג׳בטה" ? jepeta : imageUrl} /> 
         )}
       </div>
     </div>
