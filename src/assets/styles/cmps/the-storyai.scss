@@ -24,7 +24,15 @@ img {
 }
 
 @media (max-width: 420px) {
-
+  .loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 80%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    }
   .the-story-main-container {
     display: flex;
     margin-left: -6px;

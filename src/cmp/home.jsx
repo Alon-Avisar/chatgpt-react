@@ -31,6 +31,9 @@ export const HomePage = () => {
         <div className="storyai-home main-layout">
         <Link to="/img-generation"> <h2>Create a Story</h2></Link>   
       </div>
+        <div className="storyai-home-desktop main-layout">
+        <Link to="/img-generation"> <h2>Create a Story</h2></Link>   
+      </div>
    
     </div>
   );

@@ -26,3 +26,14 @@
   font-size: 25px;
   width: 700px;
 }
+
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 52%;
+  top: 56%;
+  transform: translate(-50%, -50%);
+  }
