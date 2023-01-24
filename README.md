@@ -1,73 +1,54 @@
-# Getting Started with Create React App
+# Story.ai 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+About my app - Powerful and easy to use app that let you Enhance your storytelling experience with an AI-powered application that generates captivating tales and visuals using one or more keywords. With the added convenience of voice input, you can easily dictate your desired keywords using a microphone instead of typing them out. The application is designed to be highly personalized, leveraging natural language processing to understand your preferences and curate content that aligns with your tastes. With the option to switch between multiple languages, you can enjoy a truly immersive experience no matter where you are. Elevate your storytelling game and unlock endless possibilities with this cutting-edge application.
 
-## Available Scripts
 
-In the project directory, you can run:
+![home page image](https://user-images.githubusercontent.com/109606770/214249572-0fb53d9d-3864-4565-b99c-6f3a0676d1e9.png)
 
-### `npm start`
+___
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Table of Contents
+- [Features](#features)
+- [Getting started](#getting-started)
+- [Showcase](#showcase)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+#### Technologies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React.js
+- React-redux
+- Sass
+- Openai api
+- Axios, Express, Cors 
 
-### `npm run build`
+## Features
+Please feel free to take a look of the different components of the website - [Showcase](#showcase)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- HTTP request for the model: text-davinci-003, and the createImage model.
+- Presenting the story and the image side by side to make a beatiful and creative story telling.
+- CRUDL of contacts.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting started
+Clone the project or dowload the files on top.
+```
+git clone https://github.com/Alon-Avisar/chatgpt-react.git
+```
+Open the terminal and enter the following line to run it locally on your computer:
+```
+npm start
+```
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
 
-### `npm run eject`
+## Showcase
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Make a story
+ 
+![Make s story image](https://user-images.githubusercontent.com/109606770/214250971-4abfadf4-a565-41c7-b89a-429059ec96d1.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+Enjoy (:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# storyai.frontend
-# storyai.frontend
-# chatgpt-react
