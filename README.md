@@ -1,6 +1,14 @@
 # Story.ai 
 
-About my app - Powerful and easy to use app that let you Enhance your storytelling experience with an AI-powered application that generates captivating tales and visuals using one or more keywords. With the added convenience of voice input, you can easily dictate your desired keywords using a microphone instead of typing them out. The application is designed to be highly personalized, leveraging natural language processing to understand your preferences and curate content that aligns with your tastes. With the option to switch between multiple languages, you can enjoy a truly immersive experience no matter where you are. Elevate your storytelling game and unlock endless possibilities with this cutting-edge application.
+About the app - 
+Enhance your storytelling experience with an AI-powered application that generates captivating tales and visuals using one or more keywords.
+
+With the added convenience of voice input, you can easily dictate your desired keywords using a microphone instead of typing them out.
+
+The application is designed to be highly personalized, leveraging natural language processing to understand your preferences and curate content that aligns with your tastes.
+With the option to switch between multiple languages, you can enjoy a truly immersive experience no matter where you are. 
+
+Elevate your storytelling game and unlock endless possibilities with this cutting-edge application.
 
 
 ![home page image](https://user-images.githubusercontent.com/109606770/214249572-0fb53d9d-3864-4565-b99c-6f3a0676d1e9.png)
