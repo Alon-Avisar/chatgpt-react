@@ -108,8 +108,7 @@ export const MainImgChat = ({}) => {
       <section className="chatbox">
         <div className="chat-log"></div>
         <div className="headeline">
-          <span>Generate incredible storys</span>
-          <span>with limitless inspiration.</span>
+          <span>Generate incredible stories with limitless inspiration.</span>
         </div>
         <div className="chat-input-holder">
           <form id="form-id" onClick={clearChat} onSubmit={handleSubmit}>
